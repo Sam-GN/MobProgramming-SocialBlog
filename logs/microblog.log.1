@@ -1,0 +1,56 @@
+2020-07-23 19:57:25,266 ERROR: Exception on /login [POST] [in /Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1278, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/app/routes.py", line 61, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3397, in first
+    ret = list(self[0:1])
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3171, in __getitem__
+    return list(res)
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3503, in __iter__
+    return self._execute_and_instances(context)
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3528, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1014, in execute
+    return meth(self, multiparams, params)
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1133, in _execute_clauseelement
+    distilled_params,
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1318, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1512, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1278, in _execute_context
+    cursor, statement, parameters, context
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
+FROM user 
+WHERE user.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('robby ', 1, 0)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)
