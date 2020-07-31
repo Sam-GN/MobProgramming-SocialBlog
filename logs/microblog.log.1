@@ -1,4 +1,4 @@
-2020-07-23 19:57:25,266 ERROR: Exception on /login [POST] [in /Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/flask/app.py:1892]
+2020-07-23 19:57:45,295 ERROR: Exception on /register [POST] [in /Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/flask/app.py:1892]
 Traceback (most recent call last):
   File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1278, in _execute_context
     cursor, statement, parameters, context
@@ -21,8 +21,20 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/app/routes.py", line 61, in login
-    user = User.query.filter_by(username=form.username.data).first()
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/app/routes.py", line 84, in register
+    if form.validate_on_submit():
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/flask_wtf/form.py", line 100, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/wtforms/form.py", line 318, in validate
+    return super(Form, self).validate(extra)
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/wtforms/form.py", line 150, in validate
+    if not field.validate(self, extra):
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/wtforms/fields/core.py", line 226, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/wtforms/fields/core.py", line 246, in _run_validation_chain
+    validator(form, self)
+  File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/app/forms.py", line 25, in validate_username
+    user = User.query.filter_by(username=username.data).first()
   File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3397, in first
     ret = list(self[0:1])
   File "/Users/robbymoseley/Desktop/MobProgramming-SocialBlog/.venv/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3171, in __getitem__
@@ -52,5 +64,42 @@ sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
 FROM user 
 WHERE user.username = ?
  LIMIT ? OFFSET ?]
-[parameters: ('robby ', 1, 0)]
+[parameters: ('robby', 1, 0)]
 (Background on this error at: http://sqlalche.me/e/13/e3q8)
+2020-07-23 19:59:55,040 INFO: Microblog startup [in /Users/robbymoseley/Desktop/MobProgramming-SocialBlog/app/__init__.py:44]
+2020-07-23 20:04:30,356 INFO: Microblog startup [in /Users/robbymoseley/Desktop/MobProgramming-SocialBlog/app/__init__.py:44]
+2020-07-23 20:04:52,999 INFO: Microblog startup [in /Users/robbymoseley/Desktop/MobProgramming-SocialBlog/app/__init__.py:44]
+2020-07-23 20:05:23,090 INFO: Microblog startup [in /Users/robbymoseley/Desktop/MobProgramming-SocialBlog/app/__init__.py:44]
+2020-07-23 20:05:34,965 INFO: Microblog startup [in /Users/robbymoseley/Desktop/MobProgramming-SocialBlog/app/__init__.py:44]
+2020-07-23 20:05:55,460 INFO: Microblog startup [in /Users/robbymoseley/Desktop/MobProgramming-SocialBlog/app/__init__.py:44]
+2020-07-23 20:06:05,404 INFO: Microblog startup [in /Users/robbymoseley/Desktop/MobProgramming-SocialBlog/app/__init__.py:44]
+2020-07-23 20:06:12,716 INFO: Microblog startup [in /Users/robbymoseley/Desktop/MobProgramming-SocialBlog/app/__init__.py:44]
+2020-07-23 20:59:03,733 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:44]
+2020-07-23 20:59:35,163 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:44]
+2020-07-23 21:00:22,272 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:44]
+2020-07-23 21:01:02,573 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:44]
+2020-07-30 07:21:19,616 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:21:20,495 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:30:36,957 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:30:37,816 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:31:36,364 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:31:37,207 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:31:53,820 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:31:54,697 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:32:25,373 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:32:26,256 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:40:08,625 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:40:09,513 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:43:17,473 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:43:18,368 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:44:15,428 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:44:16,349 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:44:28,697 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:44:29,556 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:44:46,845 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:44:47,729 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:45:03,086 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:45:03,993 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:45:37,383 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:45:38,325 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
+2020-07-30 07:46:14,138 INFO: Microblog startup [in C:\Users\ph32f\PycharmProjects\MicroBlog\app\__init__.py:46]
